@@ -3,21 +3,16 @@ let inputBtn = document.getElementById("search-button");
 let historyBtn = document.getElementById("history");
 // let searchedHistoryArray =[];
 
-let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
-
-
+let searchedHistoryArray =
+  JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
 
 render();
 
-
-function displayData(citySearchedFor){
-  
+function displayData(citySearchedFor) {
   let queryURL =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
     citySearchedFor +
     "&units=metric&limit=5&appid=68947311d4542f9a4f9f15d64ada6b80";
-
-  console.log("The city searched for is: " + citySearchedFor);
 
   fetch(queryURL)
     .then((response) => response.json())
@@ -66,8 +61,6 @@ function displayData(citySearchedFor){
 
       for (i = -1; i < 40; i = i + 8) {
         if (i > 0) {
-       
-
           let timestamp = response.list[i].dt;
           let forecastTempt = response.list[i].main.temp;
           let forecastWindSpeed = response.list[i].wind.speed;
@@ -95,107 +88,67 @@ function displayData(citySearchedFor){
           newDiv.append(p3);
 
           $("#forecast").append(newDiv);
-
-      
-
-          console.log("i is: " + i);
-          console.log("Timestamp: " + timestamp);
-          console.log("Converted: " + weathDateConverted);
         }
       }
-
-      console.log("City : " + response.city.name);
-      console.log("Weather: " + response.list[0].weather[0].description);
-      console.log("Icon: " + response.list[0].weather[0].icon);
-      console.log("Temp: " + response.list[0].main.temp);
-      console.log("Humidity: " + response.list[0].main.humidity);
-      console.log("Wind: " + response.list[0].wind.speed);
-      console.log(todayTemp);
-      console.log(todayIcon);
-      console.log(todayHumidity);
-      console.log(todayWindSpeed);
-      console.log("Date " + todayDate);
     });
 }
 
-
 function render() {
-  let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
-  document.getElementById("history").innerHTML="";
+  let searchedHistoryArray =
+    JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
+  document.getElementById("history").innerHTML = "";
   if (searchedHistoryArray.length < 1) {
-
     for (i = 0; i < 6; i++) {
-    let buttonText = "";
+      let buttonText = "";
 
-     let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
-    $("#history").append(Btn2);
-
+      let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
+      $("#history").append(Btn2);
     }
-  }  
-    else { 
-      
-      for(i = 0; i < 6; i++) {
-        let buttonText = searchedHistoryArray[i];
-    
-         let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
-        $("#history").append(Btn2);
+  } else {
+    for (i = 0; i < 6; i++) {
+      let buttonText = searchedHistoryArray[i];
 
+      let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
+      $("#history").append(Btn2);
     }
-
   }
-
 }
 
-
-
-function saveCityHistory(citySearchedFor){
-
-  if(searchedHistoryArray.length >5){
-searchedHistoryArray.unshift([citySearchedFor]);
-searchedHistoryArray.pop;
-
-  } else{
+function saveCityHistory(citySearchedFor) {
+  if (searchedHistoryArray.length > 5) {
+    searchedHistoryArray.unshift([citySearchedFor]);
+    searchedHistoryArray.pop;
+  } else {
     searchedHistoryArray.unshift([citySearchedFor]);
   }
 
-  localStorage.setItem("searchHistoryLocal", JSON.stringify(searchedHistoryArray));
-
+  localStorage.setItem(
+    "searchHistoryLocal",
+    JSON.stringify(searchedHistoryArray)
+  );
 }
-
-
-
-
 
 inputBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
   let citySearchedFor = document.getElementById("search-input").value;
-  document.getElementById("today").innerHTML="";
-  document.getElementById("forecast").innerHTML="";
+  document.getElementById("today").innerHTML = "";
+  document.getElementById("forecast").innerHTML = "";
   document.getElementById("search-form").reset();
-saveCityHistory(citySearchedFor);
-displayData(citySearchedFor);
-render();
-// render();
-
+  saveCityHistory(citySearchedFor);
+  displayData(citySearchedFor);
+  render();
+  // render();
 });
 
 historyBtn.addEventListener("click", function (event) {
   event.preventDefault();
-
   let citySearchedFor = event.target.innerHTML;
+  document.getElementById("today").innerHTML = "";
+  document.getElementById("forecast").innerHTML = "";
 
-console.log("historyBtn: "+citySearchedFor)
-  document.getElementById("today").innerHTML="";
-  document.getElementById("forecast").innerHTML="";
-  
-saveCityHistory(citySearchedFor);
-displayData(citySearchedFor);
-
-// render();
-
+  saveCityHistory(citySearchedFor);
+  displayData(citySearchedFor);
 });
-
-
 
 console.log("END!!!");

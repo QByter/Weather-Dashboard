@@ -1,51 +1,28 @@
-/* .container-fluid {
-
-    background-color: rgb(136, 185, 185);
-}
-
-
-#search-form{
-
-    background-color: blue;
-}
-
-#wToday{
-
-    background-color: brown;
-} */
-
 img {
-
   height: 80px;
   width: 80px;
 }
 * {
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 header {
   position: fixed top;
   padding: 1px;
-    background-color: #26236c;
+  background-color: #26236c;
   color: white;
   font-size: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
 }
 
-
 .row {
-  /* background-color: aqua; */
-  /* width: 100%; */
-
   display: flex;
-
 }
 
 aside {
-  /* background-color: rgb(124, 45, 197); */
   margin-top: 20px;
   margin-left: 5px;
   width: 22%;
@@ -54,10 +31,6 @@ aside {
   height: 860px;
   float: left;
 }
-
-/* .form-inline {
-  width: 100%;
-} */
 
 #form-heading {
   font-size: 23px;
@@ -76,35 +49,25 @@ button {
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
-  
+
   transition-duration: 0.4s;
-  
 }
 
-#newButton{
-  
+#newButton {
   background-color: rgb(192, 192, 192);
   color: black;
   margin-bottom: 3px;
   font-size: 16px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-button:hover{
-  
+button:hover {
   background-color: red;
 }
 
-
-#newButton:hover{
-  
+#newButton:hover {
   background-color: red;
   color: whitesmoke;
 }
-
-
-
-
 
 input {
   border: solid black 1px;
@@ -115,14 +78,11 @@ input {
   height: 54px;
   font-size: 20px;
   padding-left: 10px;
-  /* margin-top: 10px; */
 }
 
 #wToday {
   display: block;
-  /* height: 600px; */
   width: 75%;
-  /* background-color: black; */
   float: right;
   margin-top: 15px;
   margin-left: 20px;
@@ -130,17 +90,14 @@ input {
   margin-right: 20px;
 }
 
-#todayCity img{
-
-position: absolute;
-top: -25px;
-right: 20;
+#todayCity img {
+  position: absolute;
+  top: -25px;
+  right: 20;
 }
 
 #today {
-
   width: 100%;
-  /* background-color: blue; */
   border: solid black 2px;
   height: 235px;
   margin-bottom: 25px;
@@ -153,34 +110,27 @@ right: 20;
   display: flex;
   margin-top: 10px;
   width: 100%;
-  /* background-color: red; */
   height: 280px;
   margin-left: 0px;
   justify-content: space-between;
 }
 
-
-
 section {
-  /* padding-left: 10px; */
   display: block;
-  
 }
 
 #todayCity {
   font-size: 26px;
   font-weight: bold;
   position: relative;
-display: inline;
-
+  display: inline;
 }
 
-#todayText{
-
+#todayText {
   font-size: 20px;
 }
 
-#card-heading{
+#card-heading {
   font-size: 18px;
   font-weight: 700;
 }
@@ -196,5 +146,4 @@ display: inline;
   padding-left: 10px;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
 }
