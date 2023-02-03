@@ -7,6 +7,8 @@ let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")
 
 
 
+render();
+
 
 function displayData(citySearchedFor){
   
@@ -118,7 +120,8 @@ function displayData(citySearchedFor){
 
 
 function render() {
-
+  let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
+  document.getElementById("history").innerHTML="";
   if (searchedHistoryArray.length < 1) {
 
     for (i = 0; i < 6; i++) {
@@ -159,7 +162,7 @@ searchedHistoryArray.pop;
 
 }
 
-render();
+
 
 
 
@@ -169,9 +172,10 @@ inputBtn.addEventListener("click", function (event) {
   let citySearchedFor = document.getElementById("search-input").value;
   document.getElementById("today").innerHTML="";
   document.getElementById("forecast").innerHTML="";
-  
+  document.getElementById("search-form").reset();
 saveCityHistory(citySearchedFor);
 displayData(citySearchedFor);
+render();
 // render();
 
 });
@@ -187,6 +191,7 @@ console.log("historyBtn: "+citySearchedFor)
   
 saveCityHistory(citySearchedFor);
 displayData(citySearchedFor);
+
 // render();
 
 });
