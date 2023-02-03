@@ -1,13 +1,41 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+=======
+/* .container-fluid {
+
+    background-color: rgb(136, 185, 185);
+}
+
+
+#search-form{
+
+    background-color: blue;
+}
+
+#wToday{
+
+    background-color: brown;
+} */
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
 }
 
 header {
   position: fixed top;
   padding: 1px;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   background-color: #26236c;
   color: white;
   font-size: 30px;
@@ -15,11 +43,25 @@ header {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .row {
   display: flex;
 }
 
 aside {
+=======
+
+.row {
+  /* background-color: aqua; */
+  /* width: 100%; */
+
+  display: flex;
+
+}
+
+aside {
+  /* background-color: rgb(124, 45, 197); */
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   margin-top: 20px;
   margin-left: 5px;
   width: 22%;
@@ -29,6 +71,13 @@ aside {
   float: left;
 }
 
+<<<<<<< HEAD
+=======
+/* .form-inline {
+  width: 100%;
+} */
+
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
 #form-heading {
   font-size: 34px;
 }
@@ -46,15 +95,26 @@ button {
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+<<<<<<< HEAD
 
   transition-duration: 0.4s;
 }
 
 #newButton {
+=======
+  
+  transition-duration: 0.4s;
+  
+}
+
+#newButton{
+  
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   background-color: rgb(192, 192, 192);
   color: black;
   margin-bottom: 17px;
   font-size: 26px;
+<<<<<<< HEAD
 }
 
 button:hover {
@@ -62,10 +122,30 @@ button:hover {
 }
 
 #newButton:hover {
+=======
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+button:hover{
+  
+  background-color: red;
+}
+
+
+#newButton:hover{
+  
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   background-color: red;
   color: whitesmoke;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
 input {
   border: solid black 1px;
   width: 100%;
@@ -80,7 +160,13 @@ input {
 
 #wToday {
   display: block;
+<<<<<<< HEAD
   width: 75%;
+=======
+  /* height: 600px; */
+  width: 75%;
+  /* background-color: black; */
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   float: right;
   margin-top: 20px;
   margin-left: 20px;
@@ -88,6 +174,7 @@ input {
   margin-right: 20px;
 }
 
+<<<<<<< HEAD
 #todayCity img {
   position: absolute;
   top: -30px;
@@ -96,6 +183,19 @@ input {
 
 #today {
   width: 100%;
+=======
+#todayCity img{
+
+position: absolute;
+top: -30px;
+right: 20;
+}
+
+#today {
+
+  width: 100%;
+  /* background-color: blue; */
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   border: solid black 2px;
   height: 350px;
   margin-bottom: 50px;
@@ -108,6 +208,7 @@ input {
   display: flex;
   margin-top: 10px;
   width: 100%;
+<<<<<<< HEAD
   height: 400px;
   margin-left: 0px;
   justify-content: space-between;
@@ -115,12 +216,28 @@ input {
 
 section {
   display: block;
+=======
+  /* background-color: red; */
+  height: 400px;
+  margin-left: 0px;
+
+  justify-content: space-between;
+}
+
+
+
+section {
+  /* padding-left: 10px; */
+  display: block;
+  
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
 }
 
 #todayCity {
   font-size: 38px;
   font-weight: bold;
   position: relative;
+<<<<<<< HEAD
   display: inline;
 }
 
@@ -129,6 +246,18 @@ section {
 }
 
 #card-heading {
+=======
+display: inline;
+
+}
+
+#todayText{
+
+  font-size: 30px;
+}
+
+#card-heading{
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
   font-size: 30px;
   font-weight: 800;
 }
@@ -144,4 +273,8 @@ section {
   padding-left: 10px;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 86f4c9faa8bdf9bf07a4ac0d7d59f3f403059aab
 }
