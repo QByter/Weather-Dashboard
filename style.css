@@ -1,0 +1,195 @@
+/* .container-fluid {
+
+    background-color: rgb(136, 185, 185);
+}
+
+
+#search-form{
+
+    background-color: blue;
+}
+
+#wToday{
+
+    background-color: brown;
+} */
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+header {
+  position: fixed top;
+  padding: 1px;
+  
+  background-color: #26236c;
+  color: white;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+
+.row {
+  /* background-color: aqua; */
+  width: 100%;
+  display: flex;
+}
+
+aside {
+  /* background-color: rgb(124, 45, 197); */
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 22%;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 860px;
+  float: left;
+}
+
+/* .form-inline {
+  width: 100%;
+} */
+
+#form-heading {
+  font-size: 34px;
+}
+
+button {
+  width: 100%;
+  background-color: #5098e6;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 60px;
+  margin-top: 20px;
+  color: rgb(207, 201, 201);
+  font-size: 26px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  
+  transition-duration: 0.4s;
+  
+}
+
+#newButton{
+  
+  background-color: rgb(192, 192, 192);
+  color: black;
+  margin-bottom: 17px;
+  font-size: 26px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+button:hover{
+  
+  background-color: red;
+}
+
+
+#newButton:hover{
+  
+  background-color: red;
+  color: whitesmoke;
+}
+
+
+
+
+
+input {
+  border: solid black 1px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 80px;
+  font-size: 30px;
+  padding-left: 10px;
+  /* margin-top: 10px; */
+}
+
+#wToday {
+  display: block;
+  /* height: 600px; */
+  width: 75%;
+  /* background-color: black; */
+  float: right;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+#todayCity img{
+
+position: absolute;
+top: -30px;
+right: 20;
+}
+
+#today {
+
+  width: 100%;
+  /* background-color: blue; */
+  border: solid black 2px;
+  height: 350px;
+  margin-bottom: 50px;
+  padding-top: 40px;
+  padding-left: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#forecast {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  /* background-color: red; */
+  height: 400px;
+  margin-left: 0px;
+
+  justify-content: space-between;
+}
+
+
+
+section {
+  /* padding-left: 10px; */
+  display: block;
+  
+}
+
+#todayCity {
+  font-size: 38px;
+  font-weight: bold;
+  position: relative;
+display: inline;
+
+}
+
+#todayText{
+
+  font-size: 30px;
+}
+
+#card-heading{
+  font-size: 30px;
+  font-weight: 800;
+}
+.card-body {
+  background-color: #2d3e50;
+  color: white;
+  padding-left: 0px;
+  height: 100%;
+  width: 250px;
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 25px;
+  padding-left: 10px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
