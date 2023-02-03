@@ -1,76 +1,17 @@
 let todayDate = moment(Date.now()).format("(DD/M/YYYY)");
 let inputBtn = document.getElementById("search-button");
+let historyBtn = document.getElementById("history");
 // let searchedHistoryArray =[];
 
 let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
 
 
 
-
-
-
-
-function render() {
-
-  if (searchedHistoryArray.length < 1) {
-
-    for (i = 0; i < 6; i++) {
-    let buttonText = "";
-
-     let Btn2 = $("<button>").text("Nill: "+buttonText).attr("id", "newButton");
-    $("#history").append(Btn2);
-
-    }
-  }  
-    else { 
-      
-      for(i = 0; i < 6; i++) {
-        let buttonText = "Wow "+searchedHistoryArray[i];
-    
-         let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
-        $("#history").append(Btn2);
-
-    }
-
-  }
-
-}
-
-
-
-
-
-
 render();
 
-function saveCityHistory(citySearchedFor){
 
-  if(searchedHistoryArray.length >5){
-searchedHistoryArray.unshift([citySearchedFor]);
-searchedHistoryArray.pop;
-
-  } else{
-    searchedHistoryArray.unshift([citySearchedFor]);
-  }
-
-  localStorage.setItem("searchHistoryLocal", JSON.stringify(searchedHistoryArray));
-
-}
-
-
-
-
-
-inputBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  let citySearchedFor = document.getElementById("search-input").value;
-  document.getElementById("today").innerHTML="";
-  document.getElementById("forecast").innerHTML="";
+function displayData(citySearchedFor){
   
-saveCityHistory(citySearchedFor);
-// render();
-
   let queryURL =
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
     citySearchedFor +
@@ -104,20 +45,6 @@ saveCityHistory(citySearchedFor);
       let todayIconImage = $("<img>");
       todayIconImage.attr("src", todayIconURL);
 
-      // $("#iconF1").attr("src", todayIcon);
-      // console.log("todayIcon: " + todayIcon);
-
-      // $("#todayIcon").attr("src", todayIcon);
-
-      // document.getElementById("todayCity").innerHTML =
-      //   citySearchedFor + "  " + todayDate;
-      // $("#todayCity").append(todayIconImage);
-      // document.getElementById("todayTemp").innerHTML = "Temp: " + todayTemp;
-      // document.getElementById("todayWind").innerHTML =
-      //   "Wind: " + todayWindSpeed;
-      // document.getElementById("todayHumidity").innerHTML =
-      //   "Humidity: " + todayHumidity;
-
       let tp1 = $("<p>")
         .text(citySearchedFor + " " + todayDate)
         .attr("id", "todayCity");
@@ -139,7 +66,7 @@ saveCityHistory(citySearchedFor);
 
       for (i = -1; i < 40; i = i + 8) {
         if (i > 0) {
-          // let forecastDate = response.list[i].dt[1];
+       
 
           let timestamp = response.list[i].dt;
           let forecastTempt = response.list[i].main.temp;
@@ -169,9 +96,7 @@ saveCityHistory(citySearchedFor);
 
           $("#forecast").append(newDiv);
 
-          // $(".card-body").append(forecastTempt);
-          // $(".card-body").append(forecastWindSpeed);
-          // $(".card-body").append(forecastHumidity);
+      
 
           console.log("i is: " + i);
           console.log("Timestamp: " + timestamp);
@@ -191,15 +116,86 @@ saveCityHistory(citySearchedFor);
       console.log(todayWindSpeed);
       console.log("Date " + todayDate);
     });
+}
+
+
+function render() {
+  let searchedHistoryArray = JSON.parse(localStorage.getItem("searchHistoryLocal")) || [];
+  document.getElementById("history").innerHTML="";
+  if (searchedHistoryArray.length < 1) {
+
+    for (i = 0; i < 6; i++) {
+    let buttonText = "";
+
+     let Btn2 = $("<button>").text("Nill: "+buttonText).attr("id", "newButton");
+    $("#history").append(Btn2);
+
+    }
+  }  
+    else { 
+      
+      for(i = 0; i < 6; i++) {
+        let buttonText = searchedHistoryArray[i];
+    
+         let Btn2 = $("<button>").text(buttonText).attr("id", "newButton");
+        $("#history").append(Btn2);
+
+    }
+
+  }
+
+}
+
+
+
+function saveCityHistory(citySearchedFor){
+
+  if(searchedHistoryArray.length >5){
+searchedHistoryArray.unshift([citySearchedFor]);
+searchedHistoryArray.pop;
+
+  } else{
+    searchedHistoryArray.unshift([citySearchedFor]);
+  }
+
+  localStorage.setItem("searchHistoryLocal", JSON.stringify(searchedHistoryArray));
+
+}
+
+
+
+
+
+inputBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  let citySearchedFor = document.getElementById("search-input").value;
+  document.getElementById("today").innerHTML="";
+  document.getElementById("forecast").innerHTML="";
+  document.getElementById("search-form").reset();
+saveCityHistory(citySearchedFor);
+displayData(citySearchedFor);
+render();
+// render();
+
 });
 
+historyBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  let citySearchedFor = event.target.innerHTML;
+
+console.log("historyBtn: "+citySearchedFor)
+  document.getElementById("today").innerHTML="";
+  document.getElementById("forecast").innerHTML="";
+  
+saveCityHistory(citySearchedFor);
+displayData(citySearchedFor);
+
+// render();
+
+});
+
+
+
 console.log("END!!!");
-
-// fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=68947311d4542f9a4f9f15d64ada6b80")
-// .then (response => response.json())
-// .then(citiesFound => {
-
-//     let city = citiesFound[0];
-
-//     console.log(city.lat);
-//     console.log(city.lon);
