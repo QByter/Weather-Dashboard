@@ -26,7 +26,7 @@ function displayData(citySearchedFor) {
       let todayTemp = response.list[0].main.temp;
       let todayWindSpeed = response.list[0].wind.speed;
       let todayHumidity = response.list[0].main.humidity;
-      let todayIconURL = `http://openweathermap.org/img/wn/${todayIcon}@2x.png`;
+      let todayIconURL = `https://openweathermap.org/img/wn/${todayIcon}@2x.png`;
       let todayIconImage = $("<img>");
       todayIconImage.attr("src", todayIconURL);
 
@@ -56,7 +56,7 @@ function displayData(citySearchedFor) {
           let forecastWindSpeed = response.list[i].wind.speed;
           let forecastHumidity = response.list[i].main.humidity;
           let forecastIcon = response.list[i].weather[0].icon;
-          let iconUrl = `http://openweathermap.org/img/wn/${forecastIcon}@2x.png`;
+          let iconUrl = `https://openweathermap.org/img/wn/${forecastIcon}@2x.png`;
           let newDiv = $("<div>");
           newDiv.attr("class", "card-body");
 
