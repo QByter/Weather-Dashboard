@@ -125,7 +125,7 @@ function render() {
   if (searchedHistoryArray.length < 1) {
 
     for (i = 0; i < 6; i++) {
-    let buttonText = "";
+    let buttonText = " ";
 
      let Btn2 = $("<button>").text("Nill: "+buttonText).attr("id", "newButton");
     $("#history").append(Btn2);
